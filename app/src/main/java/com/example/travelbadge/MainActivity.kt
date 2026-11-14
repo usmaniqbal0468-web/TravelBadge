@@ -45,7 +45,6 @@ import androidx.compose.ui.zIndex
 
 private const val TAG = "MainActivity"
 
-// ---- Colour palette (change it to make the badge truly yours) ----
 private val Navy = Color(0xFF0F2A43)
 private val Cream = Color(0xFFFFF8F0)
 private val Coral = Color(0xFFFF6B57)
@@ -85,7 +84,6 @@ fun TravelBadgeScreen() {
                     country = "Portugal",
                     tagline = "MY FAVORITE DESTINATION"
                 )
-                // space reserved for the avatar that overlaps the banner
                 Spacer(modifier = Modifier.height(56.dp))
 
                 TravelerInfo(
@@ -119,7 +117,6 @@ fun TravelBadgeScreen() {
     }
 }
 
-/** Banner photo + gradient + destination text + overlapping round avatar */
 @Composable
 fun HeaderSection(destination: String, country: String, tagline: String) {
     Box(modifier = Modifier.fillMaxWidth()) {
@@ -133,7 +130,6 @@ fun HeaderSection(destination: String, country: String, tagline: String) {
                 .height(220.dp)
         )
 
-        // 2) Dark gradient so the text is readable
         Box(
             modifier = Modifier
                 .fillMaxWidth()
@@ -145,7 +141,6 @@ fun HeaderSection(destination: String, country: String, tagline: String) {
                 )
         )
 
-        // 3) Destination text over the banner
         Column(
             modifier = Modifier
                 .align(Alignment.BottomStart)
@@ -167,7 +162,6 @@ fun HeaderSection(destination: String, country: String, tagline: String) {
             Text(text = country, color = Color.White, fontSize = 16.sp)
         }
 
-        // 4) Weather chip, top-right
         Text(
             text = "☀️ 18°C  Sunny",
             color = Navy,
@@ -181,7 +175,6 @@ fun HeaderSection(destination: String, country: String, tagline: String) {
                 .padding(horizontal = 12.dp, vertical = 6.dp)
         )
 
-        // 5) Round profile photo (Image composable #2), overlapping banner and body
         Image(
             painter = painterResource(id = R.drawable.profile),
             contentDescription = "Profile photo",
@@ -239,7 +232,6 @@ fun StatChip(emoji: String, label: String, value: String, modifier: Modifier = M
     }
 }
 
-/** One info line: an emoji "icon" + text (no icon library needed) */
 @Composable
 fun InfoRow(emoji: String, text: String) {
     Row(verticalAlignment = Alignment.CenterVertically) {
@@ -253,7 +245,6 @@ fun InfoRow(emoji: String, text: String) {
     }
 }
 
-/** Decorative boarding-pass style barcode */
 @Composable
 fun BarcodeFooter() {
     val widths = listOf(2, 4, 1, 3, 2, 5, 1, 2, 4, 1, 3, 2, 1, 4, 2, 3, 1, 5, 2, 1, 3, 2, 4, 1)
